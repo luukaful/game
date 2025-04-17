@@ -4,7 +4,7 @@ project(project0)
 set(CMAKE_CXX_STANDARD 26)
 
 # Set the path to your SFML installation
-set(SFML_DIR "C:/Coding/C++/!lib/SFML/lib/cmake/SFML")
+set(SFML_DIR "C:/SFML/lib/cmake/SFML")
 
 # Find SFML
 find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
