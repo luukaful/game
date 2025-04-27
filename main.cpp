@@ -3,6 +3,13 @@
 int main() {
     // Create a window with a title and size
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Window");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Player Example");
+
+    // Load the player texture
+    sf::Texture playerTexture;
+    if (!playerTexture.loadFromFile("player.png")) {
+        return -1; // Exit if the texture cannot be loaded
+
 
     // Main loop to keep the window open
     while (window.isOpen()) {
