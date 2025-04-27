@@ -21,7 +21,7 @@ add_executable(project0
 )
 
 # Include directories
-target_include_directories(project0 PRIVATE include/ext/SFML)
+target_include_directories(project0 PRIVATE include)
 target_include_directories(project0 PRIVATE include/ext)
 
 # Link SFML libraries
