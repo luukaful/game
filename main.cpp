@@ -3,7 +3,6 @@
 int main() {
     // Create a window with a title and size
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Window");
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Player Example");
 
     // Load the player texture
     sf::Texture playerTexture;
