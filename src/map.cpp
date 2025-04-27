@@ -33,6 +33,8 @@ bool Map::loadFromFile(const std::string& filePath) {
 }
 
 void Map::render(sf::RenderWindow& window) {
+    tileSprite.setScale(32.0f / tileTexture.getSize().x, 32.0f / tileTexture.getSize().y);
+
     for (int y = 0; y < hoogte; ++y) {
         for (int x = 0; x < breedte; ++x) {
             int tileValue = map_data[y][x];
