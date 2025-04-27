@@ -5,6 +5,14 @@ int main() {
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Window");
 
 
+    // Load the player texture
+    sf::Texture playerTexture;
+    if (!playerTexture.loadFromFile("player_backwards_a.png")) {
+        return -1; // Exit if the texture cannot be loaded
+    }
+
+    player.setPosition(400, 300); // Set the initial position of the player
+
     // Main loop to keep the window open
     while (window.isOpen()) {
         sf::Event event;
@@ -23,4 +31,4 @@ int main() {
     }
 
     return 0;
-}
+    }
