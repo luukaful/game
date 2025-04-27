@@ -20,10 +20,11 @@ add_executable(project0
         include/map.h
 )
 
+# Set the executable output directory to the root directory
+set_target_properties(project0 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+
 # Include directories
-target_include_directories(project0 PRIVATE include)
-target_include_directories(project0 PRIVATE include/nlohmann)
+target_include_directories(project0 PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
 # Link SFML libraries
 target_link_libraries(project0 sfml-system sfml-window sfml-graphics)
-target_link_libraries(project0 nlohmann_json)
