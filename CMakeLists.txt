@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Set the path to the SFML installation
-set(SFML_DIR "${CMAKE_SOURCE_DIR}/include/ext/SFML v2.6.2/lib/cmake/SFML")
+set(SFML_DIR "${CMAKE_SOURCE_DIR}/include/SFML v2.6.2/lib/cmake/SFML")
 
 # Find SFML
 find_package(SFML 2.6.2 COMPONENTS system window graphics REQUIRED)
@@ -22,7 +22,8 @@ add_executable(project0
 
 # Include directories
 target_include_directories(project0 PRIVATE include)
-target_include_directories(project0 PRIVATE include/ext)
+target_include_directories(project0 PRIVATE include/nlohmann)
 
 # Link SFML libraries
 target_link_libraries(project0 sfml-system sfml-window sfml-graphics)
+target_link_libraries(project0 nlohmann_json)
