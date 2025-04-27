@@ -10,7 +10,9 @@ set(SFML_DIR "C:/SFML/lib/cmake/SFML")
 find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
 
 # Add the executable
-add_executable(project0 main.cpp)
+add_executable(project0 main.cpp
+        player.cpp
+        player.h)
 
 # Link SFML libraries
 target_link_libraries(project0 sfml-system sfml-window sfml-graphics)
