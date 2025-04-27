@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include "player.h"
 
 int main() {
     // Create a window with a title and size
@@ -6,10 +7,8 @@ int main() {
 
 
     // Load the player texture
-    sf::Texture playerTexture;
-    if (!playerTexture.loadFromFile("player_backwards_a.png")) {
-        return -1; // Exit if the texture cannot be loaded
-    }
+    Player player;
+
 
     player.setPosition(400, 300); // Set the initial position of the player
 
@@ -25,6 +24,7 @@ int main() {
 
         // Clear the window with a black color
         window.clear(sf::Color::Black);
+        player.draw(window); // Draw the player sprite
 
         // Display the contents of the window
         window.display();

@@ -16,6 +16,10 @@ bool Player::loadTexture(const std::string& filePath) {
     return true; // Texture loaded successfully
 }
 
+void Player::setPosition(float x, float y) {
+    sprite.setPosition(x, y);
+}
+
 void Player::draw(sf::RenderWindow& window) {
     window.draw(sprite);
 }
