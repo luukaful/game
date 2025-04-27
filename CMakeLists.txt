@@ -15,5 +15,8 @@ find_package(SFML 2.6.2 COMPONENTS system window graphics REQUIRED)
 # Add the executable
 add_executable(project0 src/main.cpp include/player.h src/map.cpp include/map.h)
 
+# Include directories
+target_include_directories(project0 PRIVATE include)
+
 # Link SFML libraries
 target_link_libraries(project0 sfml-system sfml-window sfml-graphics)
