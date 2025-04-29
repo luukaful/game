@@ -1,34 +1,34 @@
 cmake_minimum_required(VERSION 3.30)
 project(project0)
 
-# Set the C++ standard
+# C++ standaard instellen
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Option to specify SFML directory
+# Specificeer SFML folder
 set(SFML_DIR "${CMAKE_SOURCE_DIR}/include/SFML v2.6.2/lib/cmake/SFML")
 
-# Find SFML
+# Vind SFML
 find_package(SFML 2.6.2 COMPONENTS system window graphics REQUIRED)
 
-# Add the executable
+# Voeg de executable toe
 add_executable(project0)
 
-# Add source files
+# Bronbestanden toevoegen
 target_sources(project0 PRIVATE
         src/main.cpp
         src/player.cpp
         include/player.h
 )
 
-# Include directories
+# Voeg de bibliotheken toe
 target_include_directories(project0 PRIVATE
         ${CMAKE_SOURCE_DIR}/include
         ${CMAKE_SOURCE_DIR}/include/tmxlite
 )
 
-# Link SFML libraries
+# Link bibliotheken
 target_link_libraries(project0 PRIVATE sfml-system sfml-window sfml-graphics)
 
-# Set output directory
+# Stel de uitvoermap in
 set_target_properties(project0 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
