@@ -23,3 +23,7 @@ void Player::setPosition(float x, float y) {
 void Player::draw(sf::RenderWindow& window) {
     window.draw(sprite);
 }
+
+void Player::move(float offsetX, float offsetY) {
+    sprite.move(offsetX, offsetY);
+}

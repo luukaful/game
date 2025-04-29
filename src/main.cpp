@@ -35,9 +35,7 @@ int main(int argc, char **argv) {
         }
 
         // Vul de achtergrond met zwart
-        window.clear(sf::Color::Black);
-
-        // Teken de speler
+       // Teken de speler
         player.draw(window);
 
         // Teken het scherm
