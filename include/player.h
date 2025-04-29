@@ -11,6 +11,11 @@ class Player {
 private:
     sf::Sprite sprite;
     sf::Texture texture;
+    sf::IntRect currentFrame;
+    float animationTimer;
+    float animationSpeed;
+    int frameCount;
+    int currentFrameIndex;
 
 
 public:
