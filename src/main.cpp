@@ -24,6 +24,9 @@ int main(int argc, char **argv) {
     player.loadTexture("assets/player/player_backwards_a.png");
     player.setPosition(400, 300);
 
+    const float movementSpeed = 100.f; //  snelheid van de speler
+    sf::Clock clock;
+
     // Hoofdlus
     while (window.isOpen()) {
         sf::Event event{};
@@ -32,6 +35,24 @@ int main(int argc, char **argv) {
             if (event.type == sf::Event::Closed) {
                 window.close();
             }
+        }
+
+        //berekend delta tijd
+        float deltaTime = clock.restart().asSeconds();
+
+        // Beweeg speler met WASD en pijltjes toetsen
+        float offsetX = 0.f, offsetY = 0.f;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+            offsetY -= movementSpeed * deltaTime;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+            offsetY += movementSpeed * deltaTime;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+            offsetX -= movementSpeed * deltaTime;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+            offsetX += movementSpeed * deltaTime;
         }
 
         // Vul de achtergrond met zwart
