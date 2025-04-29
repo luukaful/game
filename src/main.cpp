@@ -7,6 +7,7 @@ int main(int argc, char **argv) {
 
     // Laad de speler
     Player player;
+    player.loadTexture("path/to/your/image.png"); // Load the texture for the player
     player.setPosition(400, 300); // Set the initial position of the player
 
     // Hoofdlus
