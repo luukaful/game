@@ -2,8 +2,9 @@
 #include "player.h"
 
 int main(int argc, char **argv) {
-    // Maak een SFML venster
+    // Maak een SFML-venster
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Window");
+    window.setFramerateLimit(60);
 
     // Laad de speler
     Player player;
