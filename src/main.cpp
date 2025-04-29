@@ -29,6 +29,8 @@ int main(int argc, char **argv) {
 
     // Hoofdlus
     while (window.isOpen()) {
+        window.clear();
+
         sf::Event event{};
         while (window.pollEvent(event)) {
             // Sluit het venster als de sluitknop is ingedrukt
@@ -54,6 +56,8 @@ int main(int argc, char **argv) {
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
             offsetX += movementSpeed * deltaTime;
         }
+
+        player.move(offsetX, offsetY);
 
         // Vul de achtergrond met zwart
        // Teken de speler
