@@ -9,6 +9,23 @@ int main(int argc, char **argv) {
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML Window");
     window.setFramerateLimit(60);
 
+    // laad een lettertype
+    sf::Font font;
+    if (!font.loadFromFile("assets/font/Interior Finishing.otf")) {
+        std::cerr << "Error loading font" << std::endl;
+        return -1; // fout
+    }
+
+    // maak een tekst object
+    sf::Text text;
+    text.setFont(font);
+    text.setString("Hello world!!");
+    text.setCharacterSize(24); // grootte in pixels
+    text.setFillColor(sf::Color::White); // tekst kleur
+    text.setPosition(300, 250); // positie in pixels
+
+
+
     //laad de icon
     sf::Image icon;
     if (!icon.loadFromFile("assets/player/player_backwards_a.png")) {
@@ -62,6 +79,7 @@ int main(int argc, char **argv) {
         // Vul de achtergrond met zwart
        // Teken de speler
         player.draw(window);
+        window.draw(text);
 
         // Teken het scherm
         window.display();
