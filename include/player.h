@@ -20,6 +20,7 @@ private:
 
 public:
     Player();
+    void move(float offsetX, float offsetY);
     bool loadTexture(const std::string& filePath);
     void setPosition(float x, float y);
     void draw(sf::RenderWindow& window);
