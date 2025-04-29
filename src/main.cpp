@@ -8,8 +8,8 @@ int main(int argc, char **argv) {
 
     // Laad de speler
     Player player;
-    player.loadTexture("assets/player/player_backwards_a.png"); // Load the texture for the player
-    player.setPosition(400, 300); // Set the initial position of the player
+    player.loadTexture("assets/player/player_backwards_a.png");
+    player.setPosition(400, 300);
 
     // Hoofdlus
     while (window.isOpen()) {
