@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
     DialoogBox dialogBox(font, 800, 600);
 
     auto dialoog = Dialoog{
-        {"Hallo, ik ben een dialoogbox.", "Dit is de tweede regel.", "En dit is de derde regel."},
+        {"Hallo, ik ben de suprieure leider van de negerslaven.", "Dit is mijn eerste katoen plukker.", "En dit is de derde regel."},
         {"Spreker", "Spreker 2", "Spreker 3"}
     };
 
