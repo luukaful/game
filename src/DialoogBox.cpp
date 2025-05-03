@@ -36,16 +36,19 @@ DialoogBox::DialoogBox(const sf::Font& font, const unsigned int windowWidth, con
     rng.seed(std::random_device()());
     pitchDistributie = std::uniform_real_distribution<float>(0.8f, 1.2f);
 
-    // Laad het dialooggeluid
-    if (!dialoogGeluidBuffer.loadFromFile("assets/audio/dialoog.wav")) {
-        std::cerr << "Failed to load dialog sound" << std::endl;
-    }
-    dialoogGeluid.setBuffer(dialoogGeluidBuffer);
-    dialoogGeluid.setVolume(50.0f);
+    // Laad de Geluideneffecten
+    sprekerGeluidBuffers["Spreker"].loadFromFile("assets/audio/dialoog.wav");
+    sprekerGeluiden["Spreker"].setBuffer(sprekerGeluidBuffers["Spreker"]);
+
+    sprekerGeluidBuffers["Spreker 2"].loadFromFile("assets/audio/dialoog2.wav");
+    sprekerGeluiden["Spreker 2"].setBuffer(sprekerGeluidBuffers["Spreker 2"]);
+
+    sprekerGeluidBuffers["Spreker 3"].loadFromFile("assets/audio/dialoog3.wav");
+    sprekerGeluiden["Spreker 3"].setBuffer(sprekerGeluidBuffers["Spreker 3"]);
 
     // Laad het selectgeluid
     if (!selectGeluidBuffer.loadFromFile("assets/audio/select.wav")) {
-        std::cerr << "Failed to load select sound" << std::endl;
+        std::cerr << "Failed to load select Geluid" << std::endl;
     }
     selectGeluid.setBuffer(selectGeluidBuffer);
     selectGeluid.setVolume(60.0f);
@@ -103,8 +106,14 @@ void DialoogBox::update(const float deltaTime) {
 
             // Speel geluid met willekeurige toonhoogte voor elk karakter
             if (huidigZichtbareTekst.back() != ' ') {  // Geen geluid voor spaties
-                dialoogGeluid.setPitch(pitchDistributie(rng));
-                dialoogGeluid.play();
+                auto it = sprekerGeluiden.find(speakerTekst.getString());
+                if (it != sprekerGeluiden.end()) {
+                    it->second.setPitch(pitchDistributie(rng));
+                    it->second.play();
+                } else {
+                    dialoogGeluid.setPitch(pitchDistributie(rng));
+                    dialoogGeluid.play();
+                }
             }
         } else {
             isTekstVolledigZichtbaar = true;

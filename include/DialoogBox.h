@@ -6,6 +6,7 @@
 #include <vector>
 #include <string>
 #include <random>
+#include <map>
 
 struct Dialoog {
     std::vector<std::string> dialoog;
@@ -15,13 +16,14 @@ struct Dialoog {
 class DialoogBox {
 private:
     sf::RectangleShape box;          // Hoofd dialoogbox
-    sf::RectangleShape speakerBox;   // Kleine box voor sprekernaam
+    std::map<std::string, sf::SoundBuffer> sprekerGeluidBuffers;
+    std::map<std::string, sf::Sound> sprekerGeluiden;
     sf::Text dialoogTekst;           // Tekstinhoud
+    sf::Sound dialoogGeluid;         // Geluid voor dialoog
+    sf::RectangleShape speakerBox;   // Sprekerbox
     sf::Text speakerTekst;           // Sprekernaam
     sf::Font font;                   // Lettertype
 
-    sf::SoundBuffer dialoogGeluidBuffer;
-    sf::Sound dialoogGeluid;
     sf::SoundBuffer selectGeluidBuffer;
     sf::Sound selectGeluid;
     std::mt19937 rng;

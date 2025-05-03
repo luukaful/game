@@ -36,8 +36,8 @@ int main(int argc, char **argv) {
     DialoogBox dialogBox(font, 800, 600);
 
     auto dialoog = Dialoog{
-        {"Hallo, ik ben een dialoogbox.", "Dit is de tweede regel."},
-        {"Spreker", "Spreker 2"}
+        {"Hallo, ik ben een dialoogbox.", "Dit is de tweede regel.", "En dit is de derde regel."},
+        {"Spreker", "Spreker 2", "Spreker 3"}
     };
 
     const float movementSpeed = 100.f; //  snelheid van de speler
