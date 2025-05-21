@@ -1,5 +1,4 @@
-#ifndef DIALOOGBOX_H
-#define DIALOOGBOX_H
+#pragma once
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
@@ -49,9 +48,7 @@ public:
     bool isZichtbaar() const;
 
     void update(float deltaTime);
-    void draw(sf::RenderWindow& window) const;
+    void teken(sf::RenderWindow& scherm) const;
     bool verwerkGebeurtenis(const sf::Event& gebeurtenis);
     bool heeftMeerDialoog() const;
 };
-
-#endif // DIALOOGBOX_H
