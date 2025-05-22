@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "dialoogbox.h"
+#include <DialoogBox.h>
 
 DialoogBox::DialoogBox(const sf::Font& font, const unsigned int windowWidth, const unsigned int windowHeight) {
     // Stel het lettertype in
@@ -121,13 +121,13 @@ void DialoogBox::update(const float deltaTime) {
     }
 }
 
-void DialoogBox::draw(sf::RenderWindow& window) const {
+void DialoogBox::teken(sf::RenderWindow& scherm) const {
     if (!isActive) return;
 
-    window.draw(box);
-    window.draw(speakerBox);
-    window.draw(dialoogTekst);
-    window.draw(speakerTekst);
+    scherm.draw(box);
+    scherm.draw(speakerBox);
+    scherm.draw(dialoogTekst);
+    scherm.draw(speakerTekst);
 }
 
 bool DialoogBox::verwerkGebeurtenis(const sf::Event& gebeurtenis) {

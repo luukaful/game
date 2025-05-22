@@ -1,29 +1,37 @@
-//
-// Created by marku on 27-4-2025.
-//
-
-#include "player.h"
+#include <Player.h>
 
 Player::Player() {
-    // Constructor implementation
+    huidigeRichting = OMLAAG; // Standaard richting
 }
 
-bool Player::loadTexture(const std::string& filePath) {
-    if (!texture.loadFromFile(filePath)) {
+bool Player::laadTexture(const std::string& bestandsPad) {
+    if (!texture.loadFromFile(bestandsPad)) {
         return false; // Failed to load texture
     }
     sprite.setTexture(texture);
     return true; // Texture loaded successfully
 }
 
-void Player::setPosition(float x, float y) {
+void Player::setPositie(float x, float y) {
     sprite.setPosition(x, y);
 }
 
-void Player::draw(sf::RenderWindow& window) {
-    window.draw(sprite);
+void Player::teken(sf::RenderWindow& scherm) const {
+    scherm.draw(sprite);
 }
 
-void Player::move(float offsetX, float offsetY) {
+void Player::beweeg(float offsetX, float offsetY) {
     sprite.move(offsetX, offsetY);
+}
+
+void Player::updateRichting(const std::string& richting) {
+    if (richting == "OMHOOG") {
+        huidigeRichting = OMHOOG;
+    } else if (richting == "OMLAAG") {
+        huidigeRichting = OMLAAG;
+    } else if (richting == "LINKS") {
+        huidigeRichting = LINKS;
+    } else if (richting == "RECHTS") {
+        huidigeRichting = RECHTS;
+    }
 }

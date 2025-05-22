@@ -1,14 +1,43 @@
 #include <iostream>
+#include <cstdlib>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-#include "player.h"
-#include "dialoogbox.h"
+#include <vector>
+#include <Player.h>
+#include <DialoogBox.h>
+#include <start.h>
+// #include <Map.h>
+
 
 
 int main(int argc, char **argv) {
-    // Maak een SFML-venster
-    sf::RenderWindow venster(sf::VideoMode(800, 600), "Game");
-    venster.setFramerateLimit(60);
+    // Maak een SFML-scherm
+    sf::RenderWindow scherm(sf::VideoMode(800, 600), "Game");
+    scherm.setFramerateLimit(60);
+
+    GameState keuze = toonBeginscherm(scherm);
+
+    if (keuze == AFSLUITEN) {
+        return 0; // Afsluiten
+    }
+    if (keuze == LAAD_SPEL) {
+        // laad opgeslagen spel
+    }
+    if (keuze == INSTELLINGEN) {
+        // instellingen
+    }
+    if (keuze == NIEUW_SPEL) {
+        // nieuw spel
+    }
+
+    std::vector<std::string> opties = {
+        "Nieuw Spel",
+        "Laad Spel",
+        "Instellingen",
+        "Afsluiten"
+
+    };
+
 
     // Laad de icoon
     sf::Image icon;
@@ -17,13 +46,14 @@ int main(int argc, char **argv) {
         return -1; // fout
     }
 
-    // Plaats venster icoon
-    venster.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+
+    // Plaats scherm icoon
+    scherm.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
     // Laad de speler
     Player player;
-    player.loadTexture("assets/player/player_backwards_a.png");
-    player.setPosition(400, 300);
+    player.laadTexture("assets/player/player_backwards_a.png");
+    player.setPositie(400, 300);
 
     // Laad een font
     sf::Font font;
@@ -33,7 +63,7 @@ int main(int argc, char **argv) {
     }
 
     // Laad de dialoogbox
-    DialoogBox dialogBox(font, 800, 600);
+    DialoogBox dialoogBox(font, 800, 600);
 
     auto dialoog = Dialoog{
         {"Hallo, ik ben de suprieure leider van de negerslaven.", "Dit is mijn eerste katoen plukker.", "En dit is de derde regel."},
@@ -43,27 +73,37 @@ int main(int argc, char **argv) {
     const float movementSpeed = 100.f; //  snelheid van de speler
     sf::Clock clock;
 
+    // Map gameMap;
+    // if (!gameMap.laadMap("assets/maps/bios_garden.tmx")) {
+    //     std::cerr << "Error loading map" << std::endl;
+    //     return -1;
+    // }
+
+
     // Hoofdlus
-    while (venster.isOpen()) {
-        // Reset het venster
-        venster.clear();
+    while (scherm.isOpen()) {
+        // Reset het scherm
+        scherm.clear();
 
         sf::Event event{};
-        while (venster.pollEvent(event)) {
-            // Sluit het venster als de gebruiker op het kruisje klikt
+        while (scherm.pollEvent(event)) {
+            // Sluit het scherm als de gebruiker op het kruisje klikt
             if (event.type == sf::Event::Closed) {
-                venster.close();
+                scherm.close();
             }
 
+
+
+
             // Verwerk de gebeurtenissen in de dialoogbox
-            if (dialogBox.isZichtbaar()) {
-                dialogBox.verwerkGebeurtenis(event);
+            if (dialoogBox.isZichtbaar()) {
+                dialoogBox.verwerkGebeurtenis(event);
             }
 
             // Druk op 'T' om de dialoogbox te activeren
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::T && !dialogBox.isZichtbaar()) {
-                dialogBox.setDialoog(dialoog);
-                dialogBox.toon();
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::T && !dialoogBox.isZichtbaar()) {
+                dialoogBox.setDialoog(dialoog);
+                dialoogBox.toon();
             }
         }
 
@@ -71,35 +111,44 @@ int main(int argc, char **argv) {
         float deltaTime = clock.restart().asSeconds();
 
         // Update de dialoogbox
-        dialogBox.update(deltaTime);
+        dialoogBox.update(deltaTime);
 
         // Beweeg de speler op basis van toetsenbordinvoer
-        if (!dialogBox.isZichtbaar()) {
+        if (!dialoogBox.isZichtbaar()) {
             float offsetX = 0.f, offsetY = 0.f;
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) ) {
                 offsetY -= movementSpeed * deltaTime;
+                player.updateRichting("OMHOOG");
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) ) {
                 offsetY += movementSpeed * deltaTime;
+                player.updateRichting("OMLAAG");
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
                 offsetX -= movementSpeed * deltaTime;
+                player.updateRichting("LINKS");
             }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) ) {
                 offsetX += movementSpeed * deltaTime;
+                player.updateRichting("RECHTS");
             }
 
-            player.move(offsetX, offsetY);
+            player.beweeg(offsetX, offsetY);
         }
 
+        // Teken de kaart
+        // gameMap.teken(scherm);
+
         // Teken de speler
-        player.draw(venster);
+        player.teken(scherm);
 
         // Teken de dialoogbox
-        dialogBox.draw(venster);
+        dialoogBox.teken(scherm);
 
-        // Teken het venster
-        venster.display();
+
+
+        // Teken het scherm
+        scherm.display();
     }
 
     return 0; // succes

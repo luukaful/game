@@ -15,6 +15,8 @@ find_package(SFML 2.6.2 COMPONENTS system window graphics audio REQUIRED)
 add_executable(project0
         src/DialoogBox.cpp
         include/DialoogBox.h
+        src/start.cpp
+        include/start.h
 )
 
 # Bronbestanden toevoegen
