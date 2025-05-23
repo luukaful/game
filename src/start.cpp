@@ -40,11 +40,11 @@ GameState toonBeginscherm(sf::RenderWindow& window) {
                 else if (event.key.code == sf::Keyboard::Down)
                     geselecteerd = (geselecteerd + 1) % opties.size();
                 else if (event.key.code == sf::Keyboard::Enter)
-                    switch (static_cast<spelState>(geselecteerd)) {
-                    case spelState::NIEUW_SPEL: return GameState::NIEUW_SPEL;
-                    case spelState::LAAD_SPEL: return GameState::LAAD_SPEL;
-                    case spelState::INSTELLINGEN: return GameState::INSTELLINGEN;
-                    case spelState::AFSLUITEN: return GameState::AFSLUITEN;
+                    switch (static_cast<GameState>(geselecteerd)) {
+                    case GameState::NIEUW_SPEL: return GameState::NIEUW_SPEL;
+                    case GameState::LAAD_SPEL: return GameState::LAAD_SPEL;
+                    case GameState::INSTELLINGEN: return GameState::INSTELLINGEN;
+                    case GameState::AFSLUITEN: return GameState::AFSLUITEN;
                     }
             }
         }

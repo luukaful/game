@@ -17,6 +17,8 @@ add_executable(project0
         include/DialoogBox.h
         src/start.cpp
         include/start.h
+        src/nieuwspel.cpp
+        include/nieuwspel.h
 )
 
 # Bronbestanden toevoegen

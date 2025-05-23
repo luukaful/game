@@ -6,6 +6,7 @@
 #include <Player.h>
 #include <DialoogBox.h>
 #include <start.h>
+#include <nieuwspel.h>
 // #include <Map.h>
 
 
@@ -27,6 +28,8 @@ int main(int argc, char **argv) {
         // instellingen
     }
     if (keuze == NIEUW_SPEL) {
+        std::string SpelerNaam = vraagNaam(scherm);
+        std::cout << "SpelerNaam: " << std::endl;
         // nieuw spel
     }
 
