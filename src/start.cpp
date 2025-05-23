@@ -10,13 +10,6 @@
 #include "SFML/Window/Event.hpp"
 #include "SFML/Window/Keyboard.hpp"
 
- enum class spelState {
-     NIEUW_SPEL,
-     LAAD_SPEL,
-     INSTELLINGEN,
-     AFSLUITEN
- };
-
 GameState toonBeginscherm(sf::RenderWindow& window) {
     sf::Font font;
     font.loadFromFile("assets/font/Interior Finishing.otf");
@@ -36,7 +29,7 @@ GameState toonBeginscherm(sf::RenderWindow& window) {
     }
 
     while (window.isOpen()) {
-        sf::Event event;
+        sf::Event event{};
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 return AFSLUITEN;

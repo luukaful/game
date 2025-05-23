@@ -11,7 +11,7 @@
 
 #include <SFML/Graphics.hpp>
 
-enum GameState { MENU, NIEUW_SPEL, LAAD_SPEL, INSTELLINGEN, AFSLUITEN };
+enum GameState { NIEUW_SPEL, LAAD_SPEL, INSTELLINGEN, AFSLUITEN };
 
 GameState toonBeginscherm(sf::RenderWindow& window);
 
