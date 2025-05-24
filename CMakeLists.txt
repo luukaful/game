@@ -19,6 +19,8 @@ add_executable(project0
         include/start.h
         src/nieuwspel.cpp
         include/nieuwspel.h
+        src/SaveParser.cpp
+        include/SaveParser.h
 )
 
 # Bronbestanden toevoegen
