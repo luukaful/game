@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdlib>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <vector>
@@ -7,6 +6,8 @@
 #include <DialoogBox.h>
 #include <start.h>
 #include <nieuwspel.h>
+
+#include "SaveParser.h"
 // #include <Map.h>
 
 
@@ -16,21 +17,33 @@ int main(int argc, char **argv) {
     sf::RenderWindow scherm(sf::VideoMode(800, 600), "Game");
     scherm.setFramerateLimit(60);
 
+    // Laad de icoon
+    sf::Image icon;
+    if (!icon.loadFromFile("assets/player/player_backwards_a.png")) {
+        std::cerr << "Error loading icon" << std::endl;
+        return -1; // fout
+    }
+
+    // Plaats scherm icoon
+    scherm.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+
     GameState keuze = toonBeginscherm(scherm);
+
+    SaveParser save("save.json");
 
     if (keuze == AFSLUITEN) {
         return 0; // Afsluiten
     }
     if (keuze == LAAD_SPEL) {
-        // laad opgeslagen spel
+        save.loadSaveFile();
     }
     if (keuze == INSTELLINGEN) {
         // instellingen
     }
     if (keuze == NIEUW_SPEL) {
-        std::string SpelerNaam = vraagNaam(scherm);
-        std::cout << "SpelerNaam: " << std::endl;
-        // nieuw spel
+        std::string spelerNaam = vraagNaam(scherm);
+        save.createSaveFile();
+        save.setValue("speler_naam", spelerNaam);
     }
 
     std::vector<std::string> opties = {
@@ -40,18 +53,6 @@ int main(int argc, char **argv) {
         "Afsluiten"
 
     };
-
-
-    // Laad de icoon
-    sf::Image icon;
-    if (!icon.loadFromFile("assets/player/player_backwards_a.png")) {
-        std::cerr << "Error loading icon" << std::endl;
-        return -1; // fout
-    }
-
-
-    // Plaats scherm icoon
-    scherm.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
     // Laad de speler
     Player player;
