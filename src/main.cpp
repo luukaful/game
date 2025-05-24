@@ -6,9 +6,10 @@
 #include <DialoogBox.h>
 #include <start.h>
 #include <nieuwspel.h>
+#include <filesystem>
+#include <LaadScherm.h>
 
 #include "SaveParser.h"
-// #include <Map.h>
 
 
 
@@ -30,29 +31,52 @@ int main(int argc, char **argv) {
     GameState keuze = toonBeginscherm(scherm);
 
     SaveParser save("save.json");
+    std::string laadBestand = "";
 
     if (keuze == AFSLUITEN) {
         return 0; // Afsluiten
     }
     if (keuze == LAAD_SPEL) {
-        save.loadSaveFile();
+        // Toon laadscherm om een save te selecteren
+        LaadScherm laadScherm;
+        laadBestand = laadScherm.toonLaadScherm(scherm);
+
+        if (laadBestand.empty()) {
+            // Gebruiker heeft geannuleerd, terug naar beginscherm
+        } else {
+            // Laad het geselecteerde bestand
+            save = SaveParser(laadBestand);
+            save.loadSaveFile();
+        }
     }
     if (keuze == INSTELLINGEN) {
         // instellingen
     }
     if (keuze == NIEUW_SPEL) {
         std::string spelerNaam = vraagNaam(scherm);
+
+        // Dynamically determine the next save file name, limited to 3 saves
+        int saveIndex = 0;
+        std::string saveFileName;
+        bool saveSlotFound = false;
+
+        while (saveIndex < 3) {
+            saveFileName = "save" + std::to_string(saveIndex++) + ".json";
+            if (!std::filesystem::exists(saveFileName)) {
+                saveSlotFound = true;
+                break;
+            }
+        }
+
+        if (!saveSlotFound) {
+            std::cerr << "Maximum number of save files reached (3)." << std::endl;
+            return 1; // Exit or handle the error as needed
+        }
+
+        SaveParser save(saveFileName);
         save.createSaveFile();
         save.setValue("speler_naam", spelerNaam);
     }
-
-    std::vector<std::string> opties = {
-        "Nieuw Spel",
-        "Laad Spel",
-        "Instellingen",
-        "Afsluiten"
-
-    };
 
     // Laad de speler
     Player player;
@@ -76,13 +100,6 @@ int main(int argc, char **argv) {
 
     const float movementSpeed = 100.f; //  snelheid van de speler
     sf::Clock clock;
-
-    // Map gameMap;
-    // if (!gameMap.laadMap("assets/maps/bios_garden.tmx")) {
-    //     std::cerr << "Error loading map" << std::endl;
-    //     return -1;
-    // }
-
 
     // Hoofdlus
     while (scherm.isOpen()) {
@@ -157,3 +174,4 @@ int main(int argc, char **argv) {
 
     return 0; // succes
 }
+

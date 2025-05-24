@@ -1,43 +1,48 @@
 cmake_minimum_required(VERSION 3.30)
 project(project0)
 
-# C++ standaard instellen
+# Set C++ standard
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Specificeer SFML folder
+# SFML setup
 set(SFML_DIR "${CMAKE_SOURCE_DIR}/include/SFML v2.6.2/lib/cmake/SFML")
-
-# Vind SFML
 find_package(SFML 2.6.2 COMPONENTS system window graphics audio REQUIRED)
 
-# Voeg de executable toe
-add_executable(project0
-        src/DialoogBox.cpp
-        include/DialoogBox.h
-        src/start.cpp
-        include/start.h
-        src/nieuwspel.cpp
-        include/nieuwspel.h
-        src/SaveParser.cpp
-        include/SaveParser.h
+# Gather source and header files automatically
+file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS
+    src/*.cpp
+)
+file(GLOB_RECURSE PROJECT_HEADERS CONFIGURE_DEPENDS
+    include/*.h
 )
 
-# Bronbestanden toevoegen
-target_sources(project0 PRIVATE
-        src/main.cpp
-        src/player.cpp
-        include/player.h
+# Add executable
+add_executable(${PROJECT_NAME}
+    ${PROJECT_SOURCES}
+    ${PROJECT_HEADERS}
 )
 
-# Voeg de bibliotheken toe
-target_include_directories(project0 PRIVATE
-        ${CMAKE_SOURCE_DIR}/include
-        ${CMAKE_SOURCE_DIR}/include/tmxlite
+# Include directories
+target_include_directories(${PROJECT_NAME} PRIVATE
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/include/tmxlite
 )
 
-# Link bibliotheken
-target_link_libraries(project0 PRIVATE sfml-system sfml-window sfml-graphics sfml-audio)
+# Link SFML libraries
+target_link_libraries(${PROJECT_NAME} PRIVATE sfml-system sfml-window sfml-graphics sfml-audio)
 
-# Stel de uitvoermap in
-set_target_properties(project0 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+# Set output directory
+set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+
+# Add tmxlite library using FetchContent
+include(FetchContent)
+FetchContent_Declare(
+    tmxlite
+    GIT_REPOSITORY https://github.com/fallahn/tmxlite.git
+    GIT_TAG master
+)
+FetchContent_MakeAvailable(tmxlite)
+
+# Link tmxlite library
+target_link_libraries(${PROJECT_NAME} PRIVATE tmxlite)
