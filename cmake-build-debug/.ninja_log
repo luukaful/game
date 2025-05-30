@@ -1,0 +1,26 @@
+# ninja log v6
+3	561	7673688637307732	CMakeFiles/project0.dir/main.cpp.obj	83a3b56626131ed
+3009	4451	7703413871661477	C:/Users/marku/CLionProjects/game/bin/project0.exe	16f6370d7d0e1af9
+52	2888	7703413842096423	CMakeFiles/project0.dir/src/map.cpp.obj	d9913e26d1cb55fc
+38	1181	7703413841952857	CMakeFiles/project0.dir/src/DialoogBox.cpp.obj	9436b0ccca315c5
+17	499	7695600595420202	CMakeFiles/project0.dir/src/player.cpp.obj	7e36a01a23b40e96
+563	759	7673688642905915	project0.exe	60f41755063303a6
+50	1365	7703413842071381	CMakeFiles/project0.dir/src/main.cpp.obj	eca4d2856e95669d
+26	550	7703420827466137	build.ninja	d8481dfc6325e38
+44	777	7703413842015824	CMakeFiles/project0.dir/src/Player.cpp.obj	13b8ab8cdc6e5f19
+59	873	7703413842156756	CMakeFiles/project0.dir/src/start.cpp.obj	330dee6439b50755
+56	863	7703413842126705	CMakeFiles/project0.dir/src/nieuwspel.cpp.obj	e8ec4f9985576e18
+8	25	7703416430481480	C:/Users/marku/CLionProjects/game/cmake-build-debug/CMakeFiles/cmake.verify_globs	4f37cdfbd57e627c
+41	1269	7703413841982858	CMakeFiles/project0.dir/src/LaadScherm.cpp.obj	b9c2580f88c86b63
+47	3009	7703413842041336	CMakeFiles/project0.dir/src/SaveParser.cpp.obj	17e105681d117b9
+9	34	7703422088222968	C:/Users/marku/CLionProjects/game/cmake-build-debug/CMakeFiles/cmake.verify_globs	4f37cdfbd57e627c
+3	24	7703433407070390	C:/Users/marku/CLionProjects/game/cmake-build-debug/CMakeFiles/cmake.verify_globs	4f37cdfbd57e627c
+27	542	7703433407305205	CMakeFiles/project0.dir/src/Story1.cpp.obj	c36cda83d235dcd7
+543	2010	7703433412465378	C:/Users/marku/CLionProjects/game/bin/project0.exe	30b2b2e1f8ea2ed6
+8	29	7703433967028085	C:/Users/marku/CLionProjects/game/cmake-build-debug/CMakeFiles/cmake.verify_globs	4f37cdfbd57e627c
+32	585	7703433967260793	CMakeFiles/project0.dir/src/Story1.cpp.obj	c36cda83d235dcd7
+585	2047	7703433972794635	C:/Users/marku/CLionProjects/game/bin/project0.exe	30b2b2e1f8ea2ed6
+10	30	7703434601522992	C:/Users/marku/CLionProjects/game/cmake-build-debug/CMakeFiles/cmake.verify_globs	4f37cdfbd57e627c
+33	549	7703434601744648	CMakeFiles/project0.dir/src/Story1.cpp.obj	c36cda83d235dcd7
+550	2018	7703434606918692	C:/Users/marku/CLionProjects/game/bin/project0.exe	30b2b2e1f8ea2ed6
+33	59	7715505257915982	C:/Users/marku/CLionProjects/game/cmake-build-debug/CMakeFiles/cmake.verify_globs	4f37cdfbd57e627c

@@ -1,0 +1,5 @@
+"C:\Program Files\JetBrains\CLion 2025.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2025.1/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\marku\CLionProjects\game -B C:\Users\marku\CLionProjects\game\cmake-build-debug
+-- Found SFML 2.6.2 in C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/lib/cmake/SFML
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/marku/CLionProjects/game/cmake-build-debug
