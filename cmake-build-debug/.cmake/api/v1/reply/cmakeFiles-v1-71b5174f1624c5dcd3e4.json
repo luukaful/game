@@ -1,0 +1,240 @@
+{
+	"globsDependent" : 
+	[
+		{
+			"expression" : "C:/Coding/C++/project0/include/*.h",
+			"paths" : 
+			[
+				"C:/Coding/C++/project0/include/DialoogBox.h",
+				"C:/Coding/C++/project0/include/LaadScherm.h",
+				"C:/Coding/C++/project0/include/Map.h",
+				"C:/Coding/C++/project0/include/NPC.h",
+				"C:/Coding/C++/project0/include/Player.h",
+				"C:/Coding/C++/project0/include/SaveParser.h",
+				"C:/Coding/C++/project0/include/nieuwspel.h",
+				"C:/Coding/C++/project0/include/proloog.h",
+				"C:/Coding/C++/project0/include/start.h",
+				"C:/Coding/C++/project0/include/tinyxml2.h"
+			],
+			"recurse" : true
+		},
+		{
+			"expression" : "C:/Coding/C++/project0/src/*.cpp",
+			"paths" : 
+			[
+				"C:/Coding/C++/project0/src/DialoogBox.cpp",
+				"C:/Coding/C++/project0/src/LaadScherm.cpp",
+				"C:/Coding/C++/project0/src/Map.cpp",
+				"C:/Coding/C++/project0/src/NPC.cpp",
+				"C:/Coding/C++/project0/src/SaveParser.cpp",
+				"C:/Coding/C++/project0/src/main.cpp",
+				"C:/Coding/C++/project0/src/nieuwspel.cpp",
+				"C:/Coding/C++/project0/src/player.cpp",
+				"C:/Coding/C++/project0/src/start.cpp",
+				"C:/Coding/C++/project0/src/tinyxml2.cpp",
+				"C:/Coding/C++/project0/src/tmxlite/FreeFuncs.cpp",
+				"C:/Coding/C++/project0/src/tmxlite/ImageLayer.cpp",
+				"C:/Coding/C++/project0/src/tmxlite/LayerGroup.cpp",
+				"C:/Coding/C++/project0/src/tmxlite/Map.cpp",
+				"C:/Coding/C++/project0/src/tmxlite/Object.cpp",
+				"C:/Coding/C++/project0/src/tmxlite/ObjectGroup.cpp",
+				"C:/Coding/C++/project0/src/tmxlite/ObjectTypes.cpp",
+				"C:/Coding/C++/project0/src/tmxlite/Property.cpp",
+				"C:/Coding/C++/project0/src/tmxlite/TileLayer.cpp",
+				"C:/Coding/C++/project0/src/tmxlite/Tileset.cpp",
+				"C:/Coding/C++/project0/src/tmxlite/detail/pugixml.cpp"
+			],
+			"recurse" : true
+		}
+	],
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "C:/vcpkg/scripts/buildsystems/vcpkg.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeDependentOption.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/WindowsPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeRCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-windres.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-C-ABI.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/Platform/Windows-GNU-CXX-ABI.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/cmake/win/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"path" : "include/SFML v2.6.2/lib/cmake/SFML/SFMLConfigVersion.cmake"
+		},
+		{
+			"path" : "include/SFML v2.6.2/lib/cmake/SFML/SFMLConfig.cmake"
+		},
+		{
+			"path" : "include/SFML v2.6.2/lib/cmake/SFML/SFMLSharedTargets.cmake"
+		},
+		{
+			"path" : "include/SFML v2.6.2/lib/cmake/SFML/SFMLSharedTargets-debug.cmake"
+		},
+		{
+			"path" : "include/SFML v2.6.2/lib/cmake/SFML/SFMLSharedTargets-release.cmake"
+		},
+		{
+			"path" : "include/SFML v2.6.2/lib/cmake/SFML/SFMLConfigDependencies.cmake"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "C:/Coding/C++/project0/cmake-build-debug",
+		"source" : "C:/Coding/C++/project0"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

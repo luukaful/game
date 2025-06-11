@@ -38,6 +38,7 @@ private:
     std::string huidigVolledigeTekst; // Volledige tekst van huidige regel
     std::string huidigZichtbareTekst; // Momenteel zichtbare deel van tekst
     bool isTekstVolledigZichtbaar;    // Is alle tekst getoond
+    bool singleSpeakerMode; // True if only one speaker is used for all lines
 
 public:
     DialoogBox(const sf::Font& font, unsigned int windowWidth, unsigned int windowHeight);
