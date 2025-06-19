@@ -8,4 +8,5 @@
 
 std::string Story1(sf::RenderWindow& window) {
     sf::Font font;
-    font.loadFromFile("assets/font/Interior Finishing.otf");lul
+    font.loadFromFile("assets/font/Interior Finishing.otf");
+}
