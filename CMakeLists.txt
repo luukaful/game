@@ -17,18 +17,25 @@ file(GLOB_RECURSE PROJECT_HEADERS CONFIGURE_DEPENDS
     include/*.h
 )
 
+file(GLOB TMXLITE_SOURCES
+        ${CMAKE_SOURCE_DIR}/src/tmxlite/*.cpp
+)
+
+# Explicitly add miniz.c
+set(MINIZ_SOURCE ${CMAKE_SOURCE_DIR}/src/tmxlite/miniz.c
+        include/proloog.h)
+
 # Add executable
 add_executable(${PROJECT_NAME}
     ${PROJECT_SOURCES}
     ${PROJECT_HEADERS}
-        src/Story1.cpp
-        include/Story1.h
+    ${MINIZ_SOURCE}
 )
 
 # Include directories
 target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/include
-
+    ${CMAKE_SOURCE_DIR}/include/tmxlite
 )
 
 # Link SFML libraries
@@ -36,5 +43,4 @@ target_link_libraries(${PROJECT_NAME} PRIVATE sfml-system sfml-window sfml-graph
 
 # Set output directory
 set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
-
-
+target_sources(${PROJECT_NAME} PRIVATE ${TMXLITE_SOURCES})

@@ -10,6 +10,7 @@ SaveParser::SaveParser(const std::string& filename) : filename(filename) {}
 void SaveParser::createSaveFile() {
     data = {
         {"speler_naam", "default"},
+        {"proloog", "0"}
     };
     saveToFile();
 }

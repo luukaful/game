@@ -19,6 +19,8 @@ public:
     void beweeg(float offsetX, float offsetY);
     bool laadTexture(const std::string& bestandsPad);
     void setPositie(float x, float y);
+    void setPositieTile(int tileX, int tileY, int tileSize);
     void teken(sf::RenderWindow& scherm) const;
     void updateRichting(const std::string& richting);
+    sf::Vector2f getPositie() const;
 };

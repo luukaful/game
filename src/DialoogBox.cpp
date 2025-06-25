@@ -38,7 +38,7 @@ DialoogBox::DialoogBox(const sf::Font& font, const unsigned int windowWidth, con
 
     // Laad de Geluideneffecten
     sprekerGeluidBuffers["Spreker"].loadFromFile("assets/audio/dialoog.wav");
-    sprekerGeluiden["Spreker"].setBuffer(sprekerGeluidBuffers["Spreker"]);
+    sprekerGeluiden["???"].setBuffer(sprekerGeluidBuffers["Spreker"]);
 
     sprekerGeluidBuffers["Spreker 2"].loadFromFile("assets/audio/dialoog2.wav");
     sprekerGeluiden["Spreker 2"].setBuffer(sprekerGeluidBuffers["Spreker 2"]);
@@ -71,12 +71,17 @@ void DialoogBox::setDialoog(Dialoog &dialoog) {
         huidigZichtbareTekst = "";
         isTekstVolledigZichtbaar = false;
 
-        if (!sprekers.empty()) {
+        // Always set the speaker for the first line
+        if (sprekers.size() == 1) {
+            speakerTekst.setString(sprekers[0]);
+        } else if (!sprekers.empty()) {
             speakerTekst.setString(sprekers[0]);
         } else {
             speakerTekst.setString("");
         }
     }
+    // Store if only one speaker is present for later use
+    singleSpeakerMode = (sprekers.size() == 1);
 }
 
 void DialoogBox::toon() {
@@ -149,7 +154,9 @@ bool DialoogBox::verwerkGebeurtenis(const sf::Event& gebeurtenis) {
                 huidigZichtbareTekst = "";
                 isTekstVolledigZichtbaar = false;
 
-                if (huidigeRegel < sprekers.size()) {
+                if (singleSpeakerMode && !sprekers.empty()) {
+                    speakerTekst.setString(sprekers[0]);
+                } else if (huidigeRegel < sprekers.size()) {
                     speakerTekst.setString(sprekers[huidigeRegel]);
                 } else {
                     speakerTekst.setString("");

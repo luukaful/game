@@ -16,6 +16,12 @@ void Player::setPositie(float x, float y) {
     sprite.setPosition(x, y);
 }
 
+void Player::setPositieTile(int tileX, int tileY, int tileSize) {
+    float x = tileX * tileSize;
+    float y = tileY * tileSize;
+    setPositie(x, y);
+}
+
 void Player::teken(sf::RenderWindow& scherm) const {
     scherm.draw(sprite);
 }
@@ -34,4 +40,8 @@ void Player::updateRichting(const std::string& richting) {
     } else if (richting == "RECHTS") {
         huidigeRichting = RECHTS;
     }
+}
+
+sf::Vector2f Player::getPositie() const {
+    return sprite.getPosition();
 }
