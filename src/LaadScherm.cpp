@@ -40,6 +40,19 @@ LaadScherm::LaadScherm() : currentSelection(0) {
     
     // Laad beschikbare save files
     laadBeschikbareSaveFiles();
+
+    // Verwijder-knop instellen
+    deleteButton.setSize(sf::Vector2f(200, 40));
+    deleteButton.setFillColor(sf::Color(180, 60, 60, 220));
+    deleteButton.setOutlineColor(sf::Color(255, 120, 120));
+    deleteButton.setOutlineThickness(2);
+    deleteButton.setPosition(120, 350);
+
+    deleteButtonText.setFont(font);
+    deleteButtonText.setString("Verwijder Spel");
+    deleteButtonText.setCharacterSize(22);
+    deleteButtonText.setFillColor(sf::Color::White);
+    deleteButtonText.setPosition(140, 355);
 }
 
 
@@ -141,6 +154,8 @@ std::string LaadScherm::toonLaadScherm(sf::RenderWindow& scherm) {
         return "";
     }
     
+    int menuMode = 0; // 0 = normaal, 1 = delete-menu
+    int deleteSelection = 0;
     // Interactieve selectie van save bestand
     while (scherm.isOpen()) {
         sf::Event event;
@@ -148,57 +163,96 @@ std::string LaadScherm::toonLaadScherm(sf::RenderWindow& scherm) {
             if (event.type == sf::Event::Closed) {
                 scherm.close();
             }
-            
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::Escape) {
-                    return ""; // Terug naar menu
+            if (menuMode == 0) {
+                if (event.type == sf::Event::KeyPressed) {
+                    if (event.key.code == sf::Keyboard::Escape) {
+                        return "";
+                    } else if (event.key.code == sf::Keyboard::Up) {
+                        if (currentSelection > 0) currentSelection--;
+                        else currentSelection = saveFiles.size(); // laatste optie is delete
+                    } else if (event.key.code == sf::Keyboard::Down) {
+                        if (currentSelection < (int)saveFiles.size()) currentSelection++;
+                        else currentSelection = 0;
+                    } else if (event.key.code == sf::Keyboard::Return) {
+                        if (currentSelection == (int)saveFiles.size()) {
+                            // Delete-menu openen
+                            menuMode = 1;
+                            deleteSelection = 0;
+                        } else {
+                            return saveFiles[currentSelection];
+                        }
+                    }
                 }
-                else if (event.key.code == sf::Keyboard::Up) {
-                    currentSelection = (currentSelection > 0) ? currentSelection - 1 : saveFiles.size() - 1;
-                }
-                else if (event.key.code == sf::Keyboard::Down) {
-                    currentSelection = (currentSelection < saveFiles.size() - 1) ? currentSelection + 1 : 0;
-                }
-                else if (event.key.code == sf::Keyboard::Return) {
-                    return saveFiles[currentSelection]; // Geselecteerde save file
-                }
-                else if (event.key.code == sf::Keyboard::Delete) {
-                    verwijderSaveFile(currentSelection);
+            } else if (menuMode == 1) {
+                if (event.type == sf::Event::KeyPressed) {
+                    if (event.key.code == sf::Keyboard::Escape) {
+                        menuMode = 0;
+                    } else if (event.key.code == sf::Keyboard::Up) {
+                        if (deleteSelection > 0) deleteSelection--;
+                        else deleteSelection = saveFiles.size() - 1;
+                    } else if (event.key.code == sf::Keyboard::Down) {
+                        if (deleteSelection < (int)saveFiles.size() - 1) deleteSelection++;
+                        else deleteSelection = 0;
+                    } else if (event.key.code == sf::Keyboard::Return) {
+                        verwijderSaveFile(deleteSelection);
+                        if (saveFiles.empty()) {
+                            menuMode = 0;
+                            currentSelection = 0;
+                        } else if (deleteSelection >= (int)saveFiles.size()) {
+                            deleteSelection = std::max(0, (int)saveFiles.size() - 1);
+                        }
+                    }
                 }
             }
         }
-        
         // Teken alles
         scherm.clear();
         scherm.draw(backgroundSprite);
         scherm.draw(titleText);
-        
-        // Instructies
         sf::Text instructies;
         instructies.setFont(font);
-        instructies.setString("Gebruik pijltjestoetsen om te navigeren en Enter om te selecteren");
+        if (menuMode == 0) {
+            instructies.setString("Gebruik pijltjestoetsen om te navigeren en Enter om te selecteren");
+        } else {
+            instructies.setString("Kies een spel om te verwijderen (Enter = verwijderen, ESC = terug)");
+        }
         instructies.setCharacterSize(16);
         instructies.setFillColor(sf::Color(200, 200, 200));
         instructies.setPosition(150, 100);
         scherm.draw(instructies);
-        
-        // Teken highlight achter geselecteerde optie
-        if (!saveFiles.empty()) {
-            selectionHighlight.setPosition(80, 145 + currentSelection * 60);
-            scherm.draw(selectionHighlight);
+        if (menuMode == 0) {
+            // Highlight
+            if (!saveFiles.empty() && currentSelection < (int)saveFiles.size()) {
+                selectionHighlight.setPosition(80, 145 + currentSelection * 60);
+                scherm.draw(selectionHighlight);
+            } else if (currentSelection == (int)saveFiles.size()) {
+                // Highlight delete-knop
+                selectionHighlight.setPosition(deleteButton.getPosition().x - 20, deleteButton.getPosition().y - 5);
+                selectionHighlight.setSize(sf::Vector2f(deleteButton.getSize().x + 40, deleteButton.getSize().y + 10));
+                scherm.draw(selectionHighlight);
+                selectionHighlight.setSize(sf::Vector2f(300, 50)); // reset
+            }
+            // Opties
+            for (const auto& optie : saveOptions) {
+                scherm.draw(optie);
+            }
+            scherm.draw(deleteButton);
+            scherm.draw(deleteButtonText);
+            if (!saveFiles.empty() && currentSelection < (int)saveFiles.size()) {
+                toonSavePreview(scherm, saveFiles[currentSelection], currentSelection);
+            }
+        } else if (menuMode == 1) {
+            // Delete-menu
+            for (size_t i = 0; i < saveFiles.size(); ++i) {
+                sf::Text optie;
+                optie.setFont(font);
+                optie.setString("Verwijder: " + saveFiles[i]);
+                optie.setCharacterSize(24);
+                optie.setFillColor(i == (size_t)deleteSelection ? sf::Color(255, 100, 100) : sf::Color::White);
+                optie.setPosition(120, 180 + (int)i * 50);
+                scherm.draw(optie);
+            }
         }
-        
-        // Teken alle opties
-        for (const auto& optie : saveOptions) {
-            scherm.draw(optie);
-        }
-        
-        // Teken preview van de geselecteerde save
-        if (!saveFiles.empty()) {
-            toonSavePreview(scherm, saveFiles[currentSelection], currentSelection);
-        }
-        
-        // Teken terug knop
         sf::Text terugKnop;
         terugKnop.setFont(font);
         terugKnop.setString("ESC - Terug naar menu");
@@ -206,10 +260,8 @@ std::string LaadScherm::toonLaadScherm(sf::RenderWindow& scherm) {
         terugKnop.setFillColor(sf::Color(180, 180, 180));
         terugKnop.setPosition(30, 550);
         scherm.draw(terugKnop);
-        
         scherm.display();
     }
-    
     return "";
 }
 

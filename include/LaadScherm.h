@@ -24,6 +24,10 @@ private:
     sf::RectangleShape selectionHighlight;
     sf::RectangleShape previewBox;
     
+    // Verwijder-knop UI
+    sf::RectangleShape deleteButton;
+    sf::Text deleteButtonText;
+
     // Load save files from directory
     void laadBeschikbareSaveFiles();
     
