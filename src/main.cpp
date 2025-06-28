@@ -120,6 +120,10 @@ int main(int argc, char **argv) {
         playerActive = true;
     }
 
+    bool pauzeMenu = false;
+    int pauzeSelectie = 0;
+    const std::vector<std::string> pauzeOpties = {"option", "leave", "continue"};
+
     // Hoofdlus
     while (scherm.isOpen()) {
         // Reset het scherm
@@ -132,10 +136,70 @@ int main(int argc, char **argv) {
                 scherm.close();
             }
 
-            // Verwerk de gebeurtenissen in de dialoogbox
-            if (dialoogBox.isZichtbaar()) {
-                dialoogBox.verwerkGebeurtenis(event);
+            if (pauzeMenu) {
+                if (event.type == sf::Event::KeyPressed) {
+                    if (event.key.code == sf::Keyboard::Up) {
+                        if (pauzeSelectie > 0) pauzeSelectie--;
+                        else pauzeSelectie = pauzeOpties.size() - 1;
+                    } else if (event.key.code == sf::Keyboard::Down) {
+                        if (pauzeSelectie < (int)pauzeOpties.size() - 1) pauzeSelectie++;
+                        else pauzeSelectie = 0;
+                    } else if (event.key.code == sf::Keyboard::Return) {
+                        if (pauzeOpties[pauzeSelectie] == "continue") {
+                            pauzeMenu = false;
+                        } else if (pauzeOpties[pauzeSelectie] == "leave") {
+                            scherm.close();
+                        } else if (pauzeOpties[pauzeSelectie] == "option") {
+                            // Hier kun je opties toevoegen
+                        }
+                    } else if (event.key.code == sf::Keyboard::Escape) {
+                        pauzeMenu = false;
+                    }
+                }
+            } else {
+                // Verwerk de gebeurtenissen in de dialoogbox
+                if (dialoogBox.isZichtbaar()) {
+                    dialoogBox.verwerkGebeurtenis(event);
+                }
+                if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape && !dialoogBox.isZichtbaar()) {
+                    pauzeMenu = true;
+                    pauzeSelectie = 0;
+                }
             }
+        }
+
+        if (pauzeMenu) {
+            // Pauzemenu tekenen
+            // Gebruik UI view zodat het menu niet meebeweegt met de camera
+            sf::View oldView = scherm.getView();
+            scherm.setView(scherm.getDefaultView());
+            const float menuWidth = 400;
+            const float menuHeight = 300;
+            const float menuX = (800 - menuWidth) / 2;
+            const float menuY = (600 - menuHeight) / 2;
+            sf::RectangleShape menuBg;
+            menuBg.setSize(sf::Vector2f(menuWidth, menuHeight));
+            menuBg.setFillColor(sf::Color(40, 40, 60, 230));
+            menuBg.setOutlineColor(sf::Color(120, 120, 180));
+            menuBg.setOutlineThickness(3);
+            menuBg.setPosition(menuX, menuY);
+            scherm.draw(menuBg);
+            for (size_t i = 0; i < pauzeOpties.size(); ++i) {
+                sf::Text optie;
+                optie.setFont(font);
+                optie.setString(pauzeOpties[i]);
+                optie.setCharacterSize(32);
+                optie.setFillColor(i == (size_t)pauzeSelectie ? sf::Color(255, 200, 100) : sf::Color::White);
+                // Centreer de tekst horizontaal in het menu
+                sf::FloatRect bounds = optie.getLocalBounds();
+                float textX = menuX + (menuWidth - bounds.width) / 2 - bounds.left;
+                float textY = menuY + 60 + (int)i * 70;
+                optie.setPosition(textX, textY);
+                scherm.draw(optie);
+            }
+            scherm.setView(oldView);
+            scherm.display();
+            continue;
         }
 
         // Bereken de tijd sinds de laatste frame (deltaTime / dt)

@@ -154,8 +154,10 @@ std::string LaadScherm::toonLaadScherm(sf::RenderWindow& scherm) {
         return "";
     }
     
-    int menuMode = 0; // 0 = normaal, 1 = delete-menu
+    int menuMode = 0; // 0 = normaal, 1 = delete-menu, 2 = esc-menu
     int deleteSelection = 0;
+    int escMenuSelection = 0;
+    const std::vector<std::string> escMenuOptions = {"option", "leave", "continue"};
     // Interactieve selectie van save bestand
     while (scherm.isOpen()) {
         sf::Event event;
@@ -166,7 +168,8 @@ std::string LaadScherm::toonLaadScherm(sf::RenderWindow& scherm) {
             if (menuMode == 0) {
                 if (event.type == sf::Event::KeyPressed) {
                     if (event.key.code == sf::Keyboard::Escape) {
-                        return "";
+                        menuMode = 2;
+                        escMenuSelection = 0;
                     } else if (event.key.code == sf::Keyboard::Up) {
                         if (currentSelection > 0) currentSelection--;
                         else currentSelection = saveFiles.size(); // laatste optie is delete
@@ -203,6 +206,26 @@ std::string LaadScherm::toonLaadScherm(sf::RenderWindow& scherm) {
                         }
                     }
                 }
+            } else if (menuMode == 2) {
+                if (event.type == sf::Event::KeyPressed) {
+                    if (event.key.code == sf::Keyboard::Up) {
+                        if (escMenuSelection > 0) escMenuSelection--;
+                        else escMenuSelection = escMenuOptions.size() - 1;
+                    } else if (event.key.code == sf::Keyboard::Down) {
+                        if (escMenuSelection < (int)escMenuOptions.size() - 1) escMenuSelection++;
+                        else escMenuSelection = 0;
+                    } else if (event.key.code == sf::Keyboard::Return) {
+                        if (escMenuOptions[escMenuSelection] == "leave") {
+                            return "";
+                        } else if (escMenuOptions[escMenuSelection] == "continue") {
+                            menuMode = 0;
+                        } else if (escMenuOptions[escMenuSelection] == "option") {
+                            // Hier kun je later extra opties toevoegen
+                        }
+                    } else if (event.key.code == sf::Keyboard::Escape) {
+                        menuMode = 0;
+                    }
+                }
             }
         }
         // Teken alles
@@ -213,7 +236,7 @@ std::string LaadScherm::toonLaadScherm(sf::RenderWindow& scherm) {
         instructies.setFont(font);
         if (menuMode == 0) {
             instructies.setString("Gebruik pijltjestoetsen om te navigeren en Enter om te selecteren");
-        } else {
+        } else if (menuMode == 1) {
             instructies.setString("Kies een spel om te verwijderen (Enter = verwijderen, ESC = terug)");
         }
         instructies.setCharacterSize(16);
@@ -250,6 +273,24 @@ std::string LaadScherm::toonLaadScherm(sf::RenderWindow& scherm) {
                 optie.setCharacterSize(24);
                 optie.setFillColor(i == (size_t)deleteSelection ? sf::Color(255, 100, 100) : sf::Color::White);
                 optie.setPosition(120, 180 + (int)i * 50);
+                scherm.draw(optie);
+            }
+        } else if (menuMode == 2) {
+            // ESC-menu tekenen
+            sf::RectangleShape escMenuBg;
+            escMenuBg.setSize(sf::Vector2f(300, 200));
+            escMenuBg.setFillColor(sf::Color(40, 40, 60, 230));
+            escMenuBg.setOutlineColor(sf::Color(120, 120, 180));
+            escMenuBg.setOutlineThickness(3);
+            escMenuBg.setPosition(250, 180);
+            scherm.draw(escMenuBg);
+            for (size_t i = 0; i < escMenuOptions.size(); ++i) {
+                sf::Text optie;
+                optie.setFont(font);
+                optie.setString(escMenuOptions[i]);
+                optie.setCharacterSize(28);
+                optie.setFillColor(i == (size_t)escMenuSelection ? sf::Color(255, 200, 100) : sf::Color::White);
+                optie.setPosition(300, 210 + (int)i * 50);
                 scherm.draw(optie);
             }
         }
