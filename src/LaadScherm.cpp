@@ -42,6 +42,7 @@ LaadScherm::LaadScherm() : currentSelection(0) {
     laadBeschikbareSaveFiles();
 }
 
+
 void LaadScherm::laadBeschikbareSaveFiles() {
     saveFiles.clear();
     saveOptions.clear();
@@ -161,6 +162,9 @@ std::string LaadScherm::toonLaadScherm(sf::RenderWindow& scherm) {
                 else if (event.key.code == sf::Keyboard::Return) {
                     return saveFiles[currentSelection]; // Geselecteerde save file
                 }
+                else if (event.key.code == sf::Keyboard::Delete) {
+                    verwijderSaveFile(currentSelection);
+                }
             }
         }
         
@@ -208,3 +212,17 @@ std::string LaadScherm::toonLaadScherm(sf::RenderWindow& scherm) {
     
     return "";
 }
+
+void LaadScherm::verwijderSaveFile(int index) {
+    if (index >= 0 && index < static_cast<int>(saveFiles.size())) {
+        std::string bestand = saveFiles[index];
+        if (std::filesystem::exists(bestand)) {
+            std::filesystem::remove(bestand);
+        }
+        laadBeschikbareSaveFiles();
+        if (currentSelection >= static_cast<int>(saveFiles.size())) {
+            currentSelection = std::max(0, static_cast<int>(saveFiles.size()) - 1);
+        }
+    }
+}
+

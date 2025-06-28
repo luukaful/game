@@ -13,6 +13,8 @@ public:
     // Load data from the save file
     bool loadSaveFile();
 
+    bool verwijderSaveBestand(const std::string& bestandsnaam);
+
     // Get and set data in the save file
     std::string getValue(const std::string& key) const;
     void setValue(const std::string& key, const std::string& value);

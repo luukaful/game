@@ -30,5 +30,8 @@ private:
     // Display save file details in the preview box
     void toonSavePreview(sf::RenderWindow& scherm, const std::string& bestand, int selectedIndex);
     
+    // Verwijder een save file op basis van index
+    void verwijderSaveFile(int index);
+
     int currentSelection;
 };

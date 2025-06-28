@@ -52,65 +52,163 @@ build cmake_object_order_depends_target_project0: phony || .
 build CMakeFiles/project0.dir/src/DialoogBox.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/DialoogBox.cpp || cmake_object_order_depends_target_project0
   DEP_FILE = CMakeFiles\project0.dir\src\DialoogBox.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
   OBJECT_DIR = CMakeFiles\project0.dir
   OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
 
 build CMakeFiles/project0.dir/src/LaadScherm.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/LaadScherm.cpp || cmake_object_order_depends_target_project0
   DEP_FILE = CMakeFiles\project0.dir\src\LaadScherm.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
   OBJECT_DIR = CMakeFiles\project0.dir
   OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
 
-build CMakeFiles/project0.dir/src/Player.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/Player.cpp || cmake_object_order_depends_target_project0
-  DEP_FILE = CMakeFiles\project0.dir\src\Player.cpp.obj.d
+build CMakeFiles/project0.dir/src/Map.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/Map.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\Map.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
+
+build CMakeFiles/project0.dir/src/NPC.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/NPC.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\NPC.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
   OBJECT_DIR = CMakeFiles\project0.dir
   OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
 
 build CMakeFiles/project0.dir/src/SaveParser.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/SaveParser.cpp || cmake_object_order_depends_target_project0
   DEP_FILE = CMakeFiles\project0.dir\src\SaveParser.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
   OBJECT_DIR = CMakeFiles\project0.dir
   OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
 
 build CMakeFiles/project0.dir/src/Story1.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/Story1.cpp || cmake_object_order_depends_target_project0
   DEP_FILE = CMakeFiles\project0.dir\src\Story1.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
   OBJECT_DIR = CMakeFiles\project0.dir
   OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
 
 build CMakeFiles/project0.dir/src/main.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/main.cpp || cmake_object_order_depends_target_project0
   DEP_FILE = CMakeFiles\project0.dir\src\main.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
-  OBJECT_DIR = CMakeFiles\project0.dir
-  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
-
-build CMakeFiles/project0.dir/src/map.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/map.cpp || cmake_object_order_depends_target_project0
-  DEP_FILE = CMakeFiles\project0.dir\src\map.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
   OBJECT_DIR = CMakeFiles\project0.dir
   OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
 
 build CMakeFiles/project0.dir/src/nieuwspel.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/nieuwspel.cpp || cmake_object_order_depends_target_project0
   DEP_FILE = CMakeFiles\project0.dir\src\nieuwspel.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
+
+build CMakeFiles/project0.dir/src/player.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/player.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\player.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
   OBJECT_DIR = CMakeFiles\project0.dir
   OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
 
 build CMakeFiles/project0.dir/src/start.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/start.cpp || cmake_object_order_depends_target_project0
   DEP_FILE = CMakeFiles\project0.dir\src\start.cpp.obj.d
   FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
   OBJECT_DIR = CMakeFiles\project0.dir
   OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
+
+build CMakeFiles/project0.dir/src/tinyxml2.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tinyxml2.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tinyxml2.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src
+
+build CMakeFiles/project0.dir/src/tmxlite/FreeFuncs.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/FreeFuncs.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\FreeFuncs.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite
+
+build CMakeFiles/project0.dir/src/tmxlite/ImageLayer.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/ImageLayer.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\ImageLayer.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite
+
+build CMakeFiles/project0.dir/src/tmxlite/LayerGroup.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/LayerGroup.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\LayerGroup.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite
+
+build CMakeFiles/project0.dir/src/tmxlite/Map.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/Map.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\Map.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite
+
+build CMakeFiles/project0.dir/src/tmxlite/Object.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/Object.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\Object.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite
+
+build CMakeFiles/project0.dir/src/tmxlite/ObjectGroup.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/ObjectGroup.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\ObjectGroup.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite
+
+build CMakeFiles/project0.dir/src/tmxlite/ObjectTypes.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/ObjectTypes.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\ObjectTypes.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite
+
+build CMakeFiles/project0.dir/src/tmxlite/Property.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/Property.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\Property.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite
+
+build CMakeFiles/project0.dir/src/tmxlite/TileLayer.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/TileLayer.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\TileLayer.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite
+
+build CMakeFiles/project0.dir/src/tmxlite/Tileset.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/Tileset.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\Tileset.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite
+
+build CMakeFiles/project0.dir/src/tmxlite/detail/pugixml.cpp.obj: CXX_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/detail/pugixml.cpp || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\detail\pugixml.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite\detail
+
+build CMakeFiles/project0.dir/src/tmxlite/miniz.c.obj: C_COMPILER__project0_unscanned_Debug C$:/Users/marku/CLionProjects/game/src/tmxlite/miniz.c || cmake_object_order_depends_target_project0
+  DEP_FILE = CMakeFiles\project0.dir\src\tmxlite\miniz.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/marku/CLionProjects/game/include -IC:/Users/marku/CLionProjects/game/include/tmxlite -IC:/Users/marku/CLionProjects/game/include/enemy -isystem "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/include"
+  OBJECT_DIR = CMakeFiles\project0.dir
+  OBJECT_FILE_DIR = CMakeFiles\project0.dir\src\tmxlite
 
 
 # =============================================================================
@@ -120,7 +218,7 @@ build CMakeFiles/project0.dir/src/start.cpp.obj: CXX_COMPILER__project0_unscanne
 #############################################
 # Link the executable C:\Users\marku\CLionProjects\game\bin\project0.exe
 
-build C$:/Users/marku/CLionProjects/game/bin/project0.exe: CXX_EXECUTABLE_LINKER__project0_Debug CMakeFiles/project0.dir/src/DialoogBox.cpp.obj CMakeFiles/project0.dir/src/LaadScherm.cpp.obj CMakeFiles/project0.dir/src/Player.cpp.obj CMakeFiles/project0.dir/src/SaveParser.cpp.obj CMakeFiles/project0.dir/src/Story1.cpp.obj CMakeFiles/project0.dir/src/main.cpp.obj CMakeFiles/project0.dir/src/map.cpp.obj CMakeFiles/project0.dir/src/nieuwspel.cpp.obj CMakeFiles/project0.dir/src/start.cpp.obj | C$:/Users/marku/CLionProjects/game/include/SFML$ v2.6.2/lib/libsfml-graphics-d.a C$:/Users/marku/CLionProjects/game/include/SFML$ v2.6.2/lib/libsfml-audio-d.a C$:/Users/marku/CLionProjects/game/include/SFML$ v2.6.2/lib/libsfml-window-d.a C$:/Users/marku/CLionProjects/game/include/SFML$ v2.6.2/lib/libsfml-system-d.a
+build C$:/Users/marku/CLionProjects/game/bin/project0.exe: CXX_EXECUTABLE_LINKER__project0_Debug CMakeFiles/project0.dir/src/DialoogBox.cpp.obj CMakeFiles/project0.dir/src/LaadScherm.cpp.obj CMakeFiles/project0.dir/src/Map.cpp.obj CMakeFiles/project0.dir/src/NPC.cpp.obj CMakeFiles/project0.dir/src/SaveParser.cpp.obj CMakeFiles/project0.dir/src/Story1.cpp.obj CMakeFiles/project0.dir/src/main.cpp.obj CMakeFiles/project0.dir/src/nieuwspel.cpp.obj CMakeFiles/project0.dir/src/player.cpp.obj CMakeFiles/project0.dir/src/start.cpp.obj CMakeFiles/project0.dir/src/tinyxml2.cpp.obj CMakeFiles/project0.dir/src/tmxlite/FreeFuncs.cpp.obj CMakeFiles/project0.dir/src/tmxlite/ImageLayer.cpp.obj CMakeFiles/project0.dir/src/tmxlite/LayerGroup.cpp.obj CMakeFiles/project0.dir/src/tmxlite/Map.cpp.obj CMakeFiles/project0.dir/src/tmxlite/Object.cpp.obj CMakeFiles/project0.dir/src/tmxlite/ObjectGroup.cpp.obj CMakeFiles/project0.dir/src/tmxlite/ObjectTypes.cpp.obj CMakeFiles/project0.dir/src/tmxlite/Property.cpp.obj CMakeFiles/project0.dir/src/tmxlite/TileLayer.cpp.obj CMakeFiles/project0.dir/src/tmxlite/Tileset.cpp.obj CMakeFiles/project0.dir/src/tmxlite/detail/pugixml.cpp.obj CMakeFiles/project0.dir/src/tmxlite/miniz.c.obj | C$:/Users/marku/CLionProjects/game/include/SFML$ v2.6.2/lib/libsfml-graphics-d.a C$:/Users/marku/CLionProjects/game/include/SFML$ v2.6.2/lib/libsfml-audio-d.a C$:/Users/marku/CLionProjects/game/include/SFML$ v2.6.2/lib/libsfml-window-d.a C$:/Users/marku/CLionProjects/game/include/SFML$ v2.6.2/lib/libsfml-system-d.a
   FLAGS = -g
   LINK_LIBRARIES = "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/lib/libsfml-graphics-d.a"  "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/lib/libsfml-audio-d.a"  "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/lib/libsfml-window-d.a"  "C:/Users/marku/CLionProjects/game/include/SFML v2.6.2/lib/libsfml-system-d.a"  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\project0.dir

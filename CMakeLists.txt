@@ -11,10 +11,10 @@ find_package(SFML 2.6.2 COMPONENTS system window graphics audio REQUIRED)
 
 # Gather source and header files automatically
 file(GLOB_RECURSE PROJECT_SOURCES CONFIGURE_DEPENDS
-    src/*.cpp
+        src/*.cpp
 )
 file(GLOB_RECURSE PROJECT_HEADERS CONFIGURE_DEPENDS
-    include/*.h
+        include/*.h
 )
 
 file(GLOB TMXLITE_SOURCES
@@ -22,20 +22,20 @@ file(GLOB TMXLITE_SOURCES
 )
 
 # Explicitly add miniz.c
-set(MINIZ_SOURCE ${CMAKE_SOURCE_DIR}/src/tmxlite/miniz.c
-        include/proloog.h)
+set(MINIZ_SOURCE ${CMAKE_SOURCE_DIR}/src/tmxlite/miniz.c)
 
 # Add executable
 add_executable(${PROJECT_NAME}
-    ${PROJECT_SOURCES}
-    ${PROJECT_HEADERS}
-    ${MINIZ_SOURCE}
+        ${PROJECT_SOURCES}
+        ${PROJECT_HEADERS}
+        ${MINIZ_SOURCE}
 )
 
 # Include directories
 target_include_directories(${PROJECT_NAME} PRIVATE
-    ${CMAKE_SOURCE_DIR}/include
-    ${CMAKE_SOURCE_DIR}/include/tmxlite
+        ${CMAKE_SOURCE_DIR}/include
+        ${CMAKE_SOURCE_DIR}/include/tmxlite
+        ${CMAKE_SOURCE_DIR}/include/enemy
 )
 
 # Link SFML libraries

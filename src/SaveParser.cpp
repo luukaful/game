@@ -2,6 +2,8 @@
 #include <fstream>
 #include <iostream>
 #include <json.hpp>
+#include <filesystem>
+
 
 using json = nlohmann::json;
 
@@ -14,6 +16,11 @@ void SaveParser::createSaveFile() {
     };
     saveToFile();
 }
+
+bool SaveParser::verwijderSaveBestand(const std::string& bestandsnaam) {
+    return std::filesystem::remove(bestandsnaam);
+}
+
 
 bool SaveParser::loadSaveFile() {
     std::ifstream file(filename);

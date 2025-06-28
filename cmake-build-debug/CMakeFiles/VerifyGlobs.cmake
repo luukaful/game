@@ -7,12 +7,15 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/marku/CLionProjects/
 set(OLD_GLOB
   "C:/Users/marku/CLionProjects/game/include/DialoogBox.h"
   "C:/Users/marku/CLionProjects/game/include/LaadScherm.h"
+  "C:/Users/marku/CLionProjects/game/include/Map.h"
+  "C:/Users/marku/CLionProjects/game/include/NPC.h"
   "C:/Users/marku/CLionProjects/game/include/Player.h"
   "C:/Users/marku/CLionProjects/game/include/SaveParser.h"
   "C:/Users/marku/CLionProjects/game/include/Story1.h"
-  "C:/Users/marku/CLionProjects/game/include/map.h"
   "C:/Users/marku/CLionProjects/game/include/nieuwspel.h"
+  "C:/Users/marku/CLionProjects/game/include/proloog.h"
   "C:/Users/marku/CLionProjects/game/include/start.h"
+  "C:/Users/marku/CLionProjects/game/include/tinyxml2.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -24,13 +27,26 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "C:/Users/marku/CLionProjects/
 set(OLD_GLOB
   "C:/Users/marku/CLionProjects/game/src/DialoogBox.cpp"
   "C:/Users/marku/CLionProjects/game/src/LaadScherm.cpp"
-  "C:/Users/marku/CLionProjects/game/src/Player.cpp"
+  "C:/Users/marku/CLionProjects/game/src/Map.cpp"
+  "C:/Users/marku/CLionProjects/game/src/NPC.cpp"
   "C:/Users/marku/CLionProjects/game/src/SaveParser.cpp"
   "C:/Users/marku/CLionProjects/game/src/Story1.cpp"
   "C:/Users/marku/CLionProjects/game/src/main.cpp"
-  "C:/Users/marku/CLionProjects/game/src/map.cpp"
   "C:/Users/marku/CLionProjects/game/src/nieuwspel.cpp"
+  "C:/Users/marku/CLionProjects/game/src/player.cpp"
   "C:/Users/marku/CLionProjects/game/src/start.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tinyxml2.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tmxlite/FreeFuncs.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tmxlite/ImageLayer.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tmxlite/LayerGroup.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tmxlite/Map.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tmxlite/Object.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tmxlite/ObjectGroup.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tmxlite/ObjectTypes.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tmxlite/Property.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tmxlite/TileLayer.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tmxlite/Tileset.cpp"
+  "C:/Users/marku/CLionProjects/game/src/tmxlite/detail/pugixml.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
